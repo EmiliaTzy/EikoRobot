@@ -1,0 +1,170 @@
+{
+      "name": "Eiko Bot",
+      "logo": "https://te.legra.ph/file/5f575d5b4a1d019ae2864.png",
+      "description": "A Telegram Powerfull Group Managment Bot written in Python using Pyrogram and Telethon",
+      "keywords": [
+         "telegram",
+         "anime",
+         "group",
+         "manager",
+         "tiana",
+         "tianabot",
+         "telegram"
+      ],   
+   "repository": "https://github.com/EmiliaTzy/EikoRobot",
+   "addons": [
+      {
+         "options": {
+            "version": "13"
+         },
+         "plan": "heroku-postgresql"
+      }
+   ],
+   "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-python"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    }
+  ],  
+   "env": {
+      "TOKEN": {
+         "description": "Isi dengan bot tokenmu. Dapatkan dari @BotFather ya",
+         "required": true,
+         "value": ""
+      },
+      "API_ID": {
+         "description": "Dapatkan API_ID dati my.telegram.org untuk modul telethon.",
+         "required": true,
+         "value": ""
+      },
+      "API_HASH": {
+         "description": "Dapatkan API_HASH dari my.telegram.org, untuk modul telethon.",
+         "required": true,
+         "value": ""
+      },    
+      "SQLALCHEMY_DATABASE_URI": {
+         "description": "Postgres sql db mu, kosongkan saja jika kamu punya.",
+         "required": false,
+         "value": "sqldbtype://username:pw@hostname:port/db_name"
+      },      
+      "OWNER_ID": {
+         "description": "ID pengguna untuk pemilik.",
+         "required": true,
+         "value": "1221249722"
+      },
+      "BOT_ID": {
+         "description": "Isi dengan bot IDmu. Gunakan Bot @rNatalie_bot untuk mengetahui.",
+         "required": true,
+         "value": ""
+      },
+      "HEROKU_API_KEY": {
+        "description": "Isi dengan Heroku API key, dapatkan dari 'https://dashboard.heroku.com/account'",
+        "value": ""
+      },
+      "HEROKU_APP_NAME": {
+        "description": "Masukkan Heroku app name disini (Harus sama dengan nama yang ada diatas sendiri).",
+        "required": false
+      },
+      "OWNER_USERNAME": {
+         "description": "Isi dengan username tanpa @",
+         "value": "tth_kiya98"
+      },
+      "BOT_USERNAME": {
+         "description": "Isi dengan bot username tanpa @",
+         "value": "EikoManager_Bot"
+      },
+      "ASS_USERNAME": {
+         "description": "Isi Username asisten musik tanpa @",
+         "value": "eikoassistants"
+      },
+      "BOT_NAME": {
+         "description": "Isi dengan Nama botmu",
+         "value": "Eiko"
+      },
+      "UPDATE_CHANNEL": {
+         "description": "Your Telegram Bot Update Channel username Without @ like: TianaxUpdates.",
+         "required": true,
+         "value": "CatatanAz"
+      },
+      "SUPPORT_CHAT": {
+         "description": "Your Telegram support group chat username Without @ like: TianaxSupport.",
+         "required": true,
+         "value": "CatatanAzDay"
+      },
+      "START_IMG": {
+         "description": "Enter Your Bot Image Telegraph Link",
+         "required": true,
+         "value": ""
+      },
+      "BOT_TUT": {
+         "description": "Enter Your Bot Setup Video Tutorial Telegraph Link Leave As it is If You Dont Have",
+         "required": false,
+         "value": ""
+      },
+      "MUSICBOT_TUT": {
+         "description": "Enter Your Music Bot Setup Video Tutorial Telegraph Link Leave As it Is If You Dont Have",
+         "required": false,
+         "value": ""
+      },
+      "MONGO_DB_URI": {
+         "description": "Required for database connections.",
+         "required": true,
+         "value": ""
+      },
+      "EVENT_LOGS": {
+         "description": "Event logs channel to note down important bot level events, recommend to make this public. ex: '-123456'",
+         "required": true,
+         "value": "-123456798"
+      },
+      "JOIN_LOGGER": {
+         "description": "A channel where bot will print who added it to what group, useful during debugging or spam handling.",
+         "required": true,
+         "value": "-123456798"
+      },      
+      "DEV_USERS": {
+         "description": "ID of users who are Devs of your bot (can use /py etc.). If you are a noob and would come and bother Masha support then keep the current ID's here at they are and add yours.",
+         "required": true,
+         "value": ""
+      },
+      "STRICT_GBAN": {
+         "description": "Enforce gbans across new groups as well as old groups. When a gbanned user talks, he will be banned.",
+         "value": "True"
+      },
+      "DRAGONS": {
+         "description": "A space separated list of user IDs who you want to assign as sudo users.",
+         "required": false,
+         "value": ""
+      },
+      "DEMONS": {
+         "description": "A space separated list of user IDs who you wanna assign as support users(gban perms only).",
+         "required": false,
+         "value": ""
+      },
+      "TIGERS": {
+         "description": "A space separated list of user IDs who you wanna assign as tiger users.",
+         "required": false,
+         "value": ""
+      },
+      "WOLVES": {
+         "description": "A space separated list of user IDs who you want to assign as whitelisted - can't be banned with your bot.",
+         "required": false,
+         "value": ""
+      },
+      "ENV": {
+         "description": "Setting this to ANYTHING will enable environment variables. Leave it as it is",
+         "value": "ANYTHING"
+      },
+      "URL": {
+         "description": "The Heroku App URL :-  https://<appname>.herokuapp.com/",
+         "required": false,
+         "value": "https://<appname>.herokuapp.com/"
+      },
+      "DONATION_LINK": {
+         "description": "Optional: link where you would like to receive donations. If you are a noob, better leave it linking to paul",
+         "required": false,
+         "value": "https://t.me/PrincexDonateBot"
+      }   
+   }
+}
