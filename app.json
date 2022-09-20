@@ -1,6 +1,6 @@
 {
       "name": "Eiko Bot",
-      "logo": "https://te.legra.ph/file/5f575d5b4a1d019ae2864.png",
+      "logo": "https://telegra.ph/file/ec8fa3542adc9f183ccb2.jpg",
       "description": "A Telegram Powerfull Group Managment Bot written in Python using Pyrogram and Telethon",
       "keywords": [
          "telegram",
@@ -45,7 +45,7 @@
          "value": ""
       },    
       "SQLALCHEMY_DATABASE_URI": {
-         "description": "Postgres sql db mu, kosongkan saja jika kamu punya.",
+         "description": "Postgres sql db mu, kosongkan saja jika kamu tidak punya.",
          "required": false,
          "value": "sqldbtype://username:pw@hostname:port/db_name"
       },      
@@ -135,22 +135,22 @@
       "DRAGONS": {
          "description": "A space separated list of user IDs who you want to assign as sudo users.",
          "required": false,
-         "value": ""
+         "value": "1221249722"
       },
       "DEMONS": {
          "description": "A space separated list of user IDs who you wanna assign as support users(gban perms only).",
          "required": false,
-         "value": ""
+         "value": "1221249722"
       },
       "TIGERS": {
          "description": "A space separated list of user IDs who you wanna assign as tiger users.",
          "required": false,
-         "value": ""
+         "value": "1221249722"
       },
       "WOLVES": {
          "description": "A space separated list of user IDs who you want to assign as whitelisted - can't be banned with your bot.",
          "required": false,
-         "value": ""
+         "value": "1221249722"
       },
       "ENV": {
          "description": "Setting this to ANYTHING will enable environment variables. Leave it as it is",
@@ -164,7 +164,7 @@
       "DONATION_LINK": {
          "description": "Optional: link where you would like to receive donations. If you are a noob, better leave it linking to paul",
          "required": false,
-         "value": "https://t.me/PrincexDonateBot"
+         "value": "https://t.me/tth_kiya98"
       }   
    }
 }
