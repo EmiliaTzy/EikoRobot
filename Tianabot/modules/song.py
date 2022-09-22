@@ -54,7 +54,7 @@ def song(client, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'🎙 **Judul**: [{title[:55]}]({link})\n🎬 **Sumber**: YouTube\n**Durasi**: `{duration}`\n **Penonton**: `{views}`\n **Oleh**: [EIKO](t.me/EikoManager_Bot)'
+        rep = f'🎙 **Judul**: [{title[:55]}]({link})\n🎬 **Sumber**: YouTube\n**Durasi**: `{duration}`\n👀 **Penonton**: `{views}`\n✨ **Oleh**: [EIKO](t.me/EikoManager_Bot)'
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
@@ -70,6 +70,23 @@ def song(client, message):
         os.remove(thumb_name)
     except Exception as e:
         print(e)
+
+
+@pbot.on_message(command(["lyric", f"lyric@{bn}"]))
+async def lyrics(_, message):
+    try:
+        if len(message.command) < 2:
+            await message.reply_text("» **give a lyric name too.**")
+            return
+        query = message.text.split(None, 1)[1]
+        rep = await message.reply_text("🔎 **searching lyrics...**")
+        resp = requests.get(
+            f"https://api-tede.herokuapp.com/api/lirik?l={query}"
+        ).json()
+        result = f"{resp['data']}"
+        await rep.edit(result)
+    except Exception:
+        await rep.edit("❌ **lyrics not found.**\n\n» **please give a valid song name.**")
 
 
 __mod_name__ = "𝙻𝚊𝚐𝚞 🎵"
