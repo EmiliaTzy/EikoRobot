@@ -93,15 +93,15 @@ PM_START_TEXT = """
 
 buttons = [
     [
-        InlineKeyboardButton(text="❓ 𝗣𝗲𝗿𝗶𝗻𝘁𝗮𝗵 & 𝗕𝗮𝗻𝘁𝘂𝗮𝗻 ❗️", callback_data="tiana_"),
+        InlineKeyboardButton(text="💠 𝗣𝗲𝗿𝗶𝗻𝘁𝗮𝗵 & 𝗕𝗮𝗻𝘁𝘂𝗮𝗻 💠", callback_data="tiana_"),
     ],
     [
         InlineKeyboardButton(text="👩‍💻 𝙄𝙣𝙛𝙤", callback_data="about_"),
         InlineKeyboardButton(text="𝙊𝙬𝙣𝙚𝙧 👨‍✈️", url=f"https://t.me/{OWNER_USERNAME}"),
     ],
    [
-        InlineKeyboardButton(text="📇 𝙐𝙥𝙙𝙖𝙩𝙚𝙨", url=f"http://t.me/{UPDATE_CHANNEL}"),
-        InlineKeyboardButton(text="𝙎𝙪𝙥𝙥𝙤𝙧𝙩 🫂", url=f"https://t.me/{SUPPORT_CHAT}"),
+        InlineKeyboardButton(text="❄ 𝙐𝙥𝙙𝙖𝙩𝙚𝙨", url=f"http://t.me/{UPDATE_CHANNEL}"),
+        InlineKeyboardButton(text="𝙎𝙪𝙥𝙥𝙤𝙧𝙩 🍃", url=f"https://t.me/{SUPPORT_CHAT}"),
     ],
     [  
         InlineKeyboardButton(text="➕️ 𝗧𝗮𝗺𝗯𝗮𝗵𝗸𝗮𝗻 𝘀𝗮𝘆𝗮 𝗸𝗲 𝗴𝗿𝘂𝗽𝗺𝘂 ➕️", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
@@ -126,7 +126,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("Eikobot.modules." + module_name)
+    imported_module = importlib.import_module("Tianabot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
