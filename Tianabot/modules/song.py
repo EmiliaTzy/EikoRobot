@@ -72,8 +72,8 @@ def song(client, message):
         print(e)
 
 
-@pbot.on_message(command(["lyric", f"lyric@{bn}"]))
-async def lyrics(_, message):
+@pbot.on_message(filters.command(["lyrics"]))
+def lyrics(_, message):
     try:
         if len(message.command) < 2:
             await message.reply_text("» **give a lyric name too.**")
