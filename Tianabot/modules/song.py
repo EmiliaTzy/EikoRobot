@@ -73,23 +73,6 @@ def song(client, message):
         print(e)
 
 
-@pbot.on_message(filters.command(["lyrics"]))
-asyncio def lyrics(_, message):
-    try:
-        if len(message.command) < 2:
-            await message.reply_text("» **give a lyric name too.**")
-            return
-        query = message.text.split(None, 1)[1]
-        rep = await message.reply_text("🔎 **searching lyrics...**")
-        resp = requests.get(
-            f"https://api-tede.herokuapp.com/api/lirik?l={query}"
-        ).json()
-        result = f"{resp['data']}"
-        await rep.edit(result)
-    except Exception:
-        await rep.edit("❌ **lyrics not found.**\n\n» **please give a valid song name.**")
-
-
 __mod_name__ = "𝙻𝚊𝚐𝚞 🎵"
 
 __help__ = """
