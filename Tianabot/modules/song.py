@@ -1,4 +1,5 @@
 import os
+import asyncio
 import requests
 import aiohttp
 import youtube_dl
@@ -73,7 +74,7 @@ def song(client, message):
 
 
 @pbot.on_message(filters.command(["lyrics"]))
-def lyrics(_, message):
+asyncio def lyrics(_, message):
     try:
         if len(message.command) < 2:
             await message.reply_text("» **give a lyric name too.**")
