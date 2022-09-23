@@ -64,6 +64,8 @@ Baca [Dokumen](http://www.prince-botz.tk/2022/02/tiana-bot.html?m=1) untuk Deskr
 <p><a href="https://heroku.com/deploy?template=https://github.com/EmiliaTzy/Musikku"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p> 
 </details>
 
+<p align="center"><a href="https://github.com/new/import"><img src="https://img.shields.io/badge/Workflow%20Deploy-black?style=for-the-badge&logo=github" width="200""/></a>
+
 <details>
 <summary><b>🔗 Deploy ke VPS</b></summary>
 <br>
