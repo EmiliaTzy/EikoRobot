@@ -118,6 +118,7 @@ if ENV:
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", "TianaxSupport")
     SPAMWATCH_SUPPORT_CHAT = os.environ.get("SPAMWATCH_SUPPORT_CHAT", None)
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
+    GENIUS_API_TOKEN = os.environ.get("GENIUS_API_TOKEN", None)
     IBM_WATSON_CRED_URL = os.environ.get("IBM_WATSON_CRED_URL", None)
     IBM_WATSON_CRED_PASSWORD = os.environ.get("IBM_WATSON_CRED_PASSWORD", None)
     ARQ_API_URL = "https://arq.hamker.in"
@@ -199,6 +200,7 @@ else:
     SUPPORT_CHAT = Config.SUPPORT_CHAT
     SPAMWATCH_SUPPORT_CHAT = Config.SPAMWATCH_SUPPORT_CHAT
     SPAMWATCH_API = Config.SPAMWATCH_API
+    GENIUS_API_TOKEN = Config.GENIUS_API_TOKEN
     INFOPIC = Config.INFOPIC
     REDIS_URL = Config.REDIS_URL
     IBM_WATSON_CRED_URL = Config.IBM_WATSON_CRED_URL
