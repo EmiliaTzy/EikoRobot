@@ -27,7 +27,7 @@ def song(client, message):
         query += ' ' + str(i)
     print(query)
     m = message.reply('Mencari Lagu...')
-    ydl_opts = {"format": "bestaudio[ext=m4a]"}
+    ydl_opts = {"format": "bestaudio[ext=mp3]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
         link = f"https://youtube.com{results[0]['url_suffix']}"
@@ -55,7 +55,7 @@ def song(client, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'🎙 **Judul**: [{title[:55]}]({link})\n🎬 **Sumber**: YouTube\n**Durasi**: `{duration}`\n👀 **Penonton**: `{views}`\n✨ **Oleh**: [EIKO](t.me/EikoManager_Bot)'
+        rep = f'🎙 **Judul**: [{title[:55]}]({link})\n🎬 **Sumber**: YouTube\n**⏱️ Durasi**: `{duration}`\n👀 **Penonton**: `{views}`\n✨ **Oleh**: [EIKO](t.me/EikoManager_Bot)'
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
