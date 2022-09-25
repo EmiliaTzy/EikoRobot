@@ -4,7 +4,7 @@ import lyricsgenius
 from pyrogram import filters
 from pyrogram.types import InlineQueryResultArticle, InputTextMessageContent
 
-from Tianabot import BOT_USERNAME, GENIUS_API_TOKEN, arq, pgram
+from Tianabot import BOT_USERNAME, GENIUS_API_TOKEN, arq, pbot
 
 
 async def lyrics_func(answers, text):
@@ -41,7 +41,7 @@ async def lyrics_func(answers, text):
 # Lel, Didn't Get Time To Make New One So Used Plugin Made br @mrconfused and @sandy1709 dont edit credits
 
 
-@pgram.on_message(filters.command("lyrics"))
+@pbot.on_message(filters.command("lyrics"))
 async def lyrics_func(_, message):
     if len(message.command) < 2:
         return await message.reply_text("**Usage:**\n/lyrics [QUERY]")
@@ -55,7 +55,7 @@ async def lyrics_func(_, message):
     await m.edit(f"**LYRICS_TOO_LONG:** [URL]({lyrics})")
 
 
-@pgram.on_message(filters.command(["glyrics", f"glyrics@{BOT_USERNAME}"]))
+@pbot.on_message(filters.command(["glyrics", f"glyrics@{BOT_USERNAME}"]))
 async def lyrics(client, message):
 
     if r"-" not in message.text:
