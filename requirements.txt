@@ -77,4 +77,4 @@ img2pdf
 multicolorcaptcha
 youtube-search
 lyricsgenius
-
+lyrics_extractor
