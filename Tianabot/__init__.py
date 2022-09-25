@@ -231,7 +231,38 @@ pbot = Client("mashapbot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 mongo_client = MongoClient(MONGO_DB_URI)
 db = mongo_client.SaitamaRobot
 dispatcher = updater.dispatcher
+
+#ARQ Client
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
+loop = asyncio.get_event_loop()
+
+async def get_entity(client, entity):
+    entity_client = client
+    if not isinstance(entity, Chat):
+        try:
+            entity = int(entity)
+        except ValueError:
+            pass
+        except TypeError:
+            entity = entity.id
+        try:
+            entity = await client.get_chat(entity)
+        except (PeerIdInvalid, ChannelInvalid):
+            for pgram in apps:
+                if pgram != client:
+                    try:
+                        entity = await pgram.get_chat(entity)
+                    except (PeerIdInvalid, ChannelInvalid):
+                        pass
+                    else:
+                        entity_client = pgram
+                        break
+            else:
+                entity = await pgram.get_chat(entity)
+                entity_client = pgram
+    return entity, entity_client
+
+apps = [pgram]
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
 WOLVES = list(WOLVES)
