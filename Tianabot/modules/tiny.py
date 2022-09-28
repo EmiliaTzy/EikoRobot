@@ -1,19 +1,19 @@
 import os
 import cv2
 from PIL import Image
-from TechnoRobot.events import register
-from TechnoRobot import telethn as tbot
+from Tianabot.events import register
+from Tianabot import telethn as tbot
 
 
 @register(pattern="^/tiny ?(.*)")
 async def _(event):
     reply = await event.get_reply_message()
     if not (reply and(reply.media)):
-           await event.reply("`Please reply to a sticker`")
+           await event.reply("`Mohon balas ke stiker`")
            return
-    kontol = await event.reply("`Processing tiny...`")
+    kontol = await event.reply("`Memproses tiny...`")
     ik = await tbot.download_media(reply)
-    im1 = Image.open("TechnoRobot/resources/ken.png")
+    im1 = Image.open("Tianabot/resources/ken.png")
     if ik.endswith(".tgs"):
         await tbot.download_media(reply, "ken.tgs")
         os.system("lottie_convert.py ken.tgs json.json")
