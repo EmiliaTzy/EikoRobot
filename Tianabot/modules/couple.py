@@ -74,7 +74,7 @@ __Pasangan baru hari ini dapat dipilih pada pukul 00.00 {tomorrow}__"""
         await message.reply_text(e)
 
 
-__mod_name__ = "𝙿𝚊𝚜𝚊𝚗𝚐𝚊𝚗 🏹"
+__mod_name__ = "Pasangan 🏹"
 __help__ = """
 /couples - Pilih Pasangan Secara Acak Di Grup
 """
