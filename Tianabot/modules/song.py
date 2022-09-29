@@ -73,7 +73,7 @@ def song(client, message):
         print(e)
 
 
-__mod_name__ = "𝙻𝚊𝚐𝚞 🎵"
+__mod_name__ = "Lagu 🎵"
 
 __help__ = """
 *Perintah Tersedia:*
