@@ -258,14 +258,15 @@ def weebify(update: Update, context: CallbackContext):
 
 
 __help__ = """
- *Play Game With Emojis:*
-  - /dice or /dice 1 to 6 any value
-  - /ball or /ball 1 to 5 any value
-  - /dart or /dart 1 to 6 any value
- Usage: hahaha just a magic.
- warning: you would be in trouble if you input any other value than mentioned.
+ *Mainkan Game Dengan Emoji:*
+  - /dice atau /dice 1 sampai 6 nilai apapun
+  - /ball atau /ball 1 sampai 5 nilai apapun
+  - /dart atau /dart 1 hingga 6 nilai apa pun
+ Penggunaan: hahaha hanya sihir.
+ peringatan: Anda akan berada dalam masalah jika Anda memasukkan nilai selain yang disebutkan.
  
- *Animations with Emojis And Texts:*
+
+ *Animasi dengan Emoji Dan Teks:*
   - /love
   - /hack
   - /bombs
@@ -275,27 +276,26 @@ __help__ = """
   - /brain
   - /police
 
- • `/runs`*:* reply a random string from an array of replies
- • `/slap`*:* slap a user, or get slapped if not a reply
- • `/shrug`*:* get shrug XD
- • `/table`*:* get flip/unflip :v
- • `/decide`*:* Randomly answers yes/no/maybe
- • `/toss`*:* Tosses A coin
- • `/bluetext`*:* check urself :V
- • `/roll`*:* Roll a dice
- • `/rlg`*:* Join ears,nose,mouth and create an emo ;-;
- • `/shout <keyword>`*:* write anything you want to give loud shout
- • `/weebify <text>`*:* returns a weebified text
- • `/truth `*:* for random truth
- • `/dare `*:* for random dare
- • `/sanitize`*:* always use this before /pat or any contact
- • `/pat`*:* pats a user, or get patted
- • `/fun`*:* funny text,stricker and gif send
- • `/aq`*:* get random anime quote
- • `/lyrics <song name> `*:* text to voice
- • `/plet <text> `*:* text get funny emojify
- • `/tts <text> `*:* text to voice
- • `/8ball`*:* predicts using 8ball method
+ • /runs*:* membalas string acak dari array balasan
+ • /slap*:* menampar pengguna, atau ditampar jika tidak dibalas
+ • /shrug*:* angkat bahu XD
+ • /table*:* dapatkan flip/unflip :v
+ • /decide*:* Secara acak menjawab ya/tidak/mungkin
+ • /toss*:* Melempar koin
+ • /bluetext*:* cek sendiri :V
+ • /roll*:* Melempar dadu
+ • /rlg*:* Bergabunglah dengan telinga, hidung, mulut dan buat emo ;-;
+ • /shout <kunci>*:* tulis apa saja yang ingin diteriakkan
+ • /weebify <teks>*:* mengembalikan teks yang di-weebify
+ • /truth*:* untuk kebenaran acak
+ • /dare*:* untuk tantangan acak
+ • /sanitize*:* selalu gunakan ini sebelum /pat atau kontak apa pun
+ • /pat*:* menepuk pengguna, atau ditepuk
+ • /fun*:* teks lucu, stiker dan kirim gif
+ • /aq*:* dapatkan kutipan anime secara acak
+ • /plet <teks> *:* teks mendapat emojify lucu
+ • /tts <teks> *:* teks ke suara
+ • /8ball*:* memprediksi menggunakan metode 8ball
 """
 
 SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize)
@@ -328,7 +328,7 @@ dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(TABLE_HANDLER)
 dispatcher.add_handler(WEEBIFY_HANDLER)
 
-__mod_name__ = "Fᴜɴ"
+__mod_name__ = "Fun 🕹"
 __command_list__ = [
     "runs", "slap", "roll", "toss", "shrug", "bluetext", "rlg", "decide",
     "table", "pat", "sanitize", "lyrics", "weebify",
