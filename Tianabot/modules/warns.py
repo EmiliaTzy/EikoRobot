@@ -521,7 +521,7 @@ __help__ = """
 ❍ /strongwarn <on/yes/off/no>*:* Jika diaktifkan, melebihi batas peringatan akan mengakibatkan Ban. Lain, hanya akan Ditendang.
 """
 
-__mod_name__ = "Wᴀʀɴs ⚠️"
+__mod_name__ = "Peringatan ⚠️"
 
 WARN_HANDLER = CommandHandler(["warn", "dwarn"], warn_user, filters=Filters.group)
 RESET_WARN_HANDLER = CommandHandler(
