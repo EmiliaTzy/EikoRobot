@@ -173,4 +173,4 @@ __help__ = """
 ❍ /nightmode (on/off) *:* Saat diaktifkan maka media akan dihapus. 
 """
 
-__mod_name__ = "𝙼𝚘𝚍𝚎 𝙼𝚊𝚕𝚊𝚖 🌙"
+__mod_name__ = "Mode Malam 🌙"
