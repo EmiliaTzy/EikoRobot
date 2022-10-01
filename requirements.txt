@@ -4,7 +4,8 @@ lxml
 wget
 gtts
 beautifulsoup4
-requests==2.20.0 
+requests==2.20.0
+pyrogram
 python-telegram-bot==12.8
 sqlalchemy==1.4.11
 PyDictionary==2.0.1
