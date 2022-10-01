@@ -135,7 +135,7 @@ def unrestr_members(
 def locktypes(update, context):
     update.effective_message.reply_text(
         "\n • ".join(
-            ["Locks available: "]
+            ["Kunci Tersedia: "]
             + sorted(list(LOCK_TYPES) + list(LOCK_CHAT_RESTRICTION))
         )
     )
@@ -163,26 +163,26 @@ def lock(update, context) -> str:
                     chat = dispatcher.bot.getChat(conn)
                     chat_id = conn
                     chat_name = chat.title
-                    text = "Locked {} for non-admins in {}!".format(ltype, chat_name)
+                    text = "Terkunci {} untuk non-admins dalam {}!".format(ltype, chat_name)
                 else:
                     if update.effective_message.chat.type == "private":
                         send_message(
                             update.effective_message,
-                            "This command is meant to use in group not in PM",
+                            "Perintah ini dimaksudkan untuk digunakan dalam grup bukan di PM",
                         )
                         return ""
                     chat = update.effective_chat
                     chat_id = update.effective_chat.id
                     chat_name = update.effective_message.chat.title
-                    text = "Locked {} for non-admins!".format(ltype)
+                    text = "Terkunci {} untuk non-admins!".format(ltype)
                 sql.update_lock(chat.id, ltype, locked=True)
                 send_message(update.effective_message, text, parse_mode="markdown")
 
                 return (
                     "<b>{}:</b>"
-                    "\n#LOCK"
+                    "\n#KUNCI"
                     "\n<b>Admin:</b> {}"
-                    "\nLocked <code>{}</code>.".format(
+                    "\nTerkunci <code>{}</code>.".format(
                         html.escape(chat.title),
                         mention_html(user.id, user.first_name),
                         ltype,
@@ -196,20 +196,20 @@ def lock(update, context) -> str:
                     chat = dispatcher.bot.getChat(conn)
                     chat_id = conn
                     chat_name = chat.title
-                    text = "Locked {} for all non-admins in {}!".format(
+                    text = "Terkunci {} untuk semua non-admins dalam {}!".format(
                         ltype, chat_name
                     )
                 else:
                     if update.effective_message.chat.type == "private":
                         send_message(
                             update.effective_message,
-                            "This command is meant to use in group not in PM",
+                            "Perintah ini dimaksudkan untuk digunakan dalam grup bukan di PM",
                         )
                         return ""
                     chat = update.effective_chat
                     chat_id = update.effective_chat.id
                     chat_name = update.effective_message.chat.title
-                    text = "Locked {} for all non-admins!".format(ltype)
+                    text = "Terkunci {} untuk semua non-admins!".format(ltype)
 
                 current_permission = context.bot.getChat(chat_id).permissions
                 context.bot.set_chat_permissions(
@@ -225,7 +225,7 @@ def lock(update, context) -> str:
                     "<b>{}:</b>"
                     "\n#Permission_LOCK"
                     "\n<b>Admin:</b> {}"
-                    "\nLocked <code>{}</code>.".format(
+                    "\nTerkunci <code>{}</code>.".format(
                         html.escape(chat.title),
                         mention_html(user.id, user.first_name),
                         ltype,
@@ -235,10 +235,10 @@ def lock(update, context) -> str:
             else:
                 send_message(
                     update.effective_message,
-                    "What are you trying to lock...? Try /locktypes for the list of lockables",
+                    "Apa yang kamu coba kunci...? Coba /locktypes untuk daftar yang dapat dikunci",
                 )
         else:
-            send_message(update.effective_message, "What are you trying to lock...?")
+            send_message(update.effective_message, "Apa yang kamu coba kunci...?")
 
     else:
         send_message(
