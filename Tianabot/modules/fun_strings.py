@@ -74,8 +74,9 @@ SLAP_TEMPLATES = (
     "Menendang {victim} dan melemparnya ke sungai.",
     "letakkan {victim} di rumah hantu.",
     "menampar {victim} dengan tongkat besi!",
-
 )
+
+WHERE = ["di pipi", "di kepala", "di pantat", "di badan"]
 
 PAT_TEMPLATES = (
     "{user1} pats {user2} on the head.",
