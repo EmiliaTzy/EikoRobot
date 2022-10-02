@@ -243,7 +243,7 @@ def lock(update, context) -> str:
     else:
         send_message(
             update.effective_message,
-            "I am not administrator or haven't got enough rights.",
+            "Saya bukan administrator atau tidak memiliki hak yang cukup.",
         )
 
     return ""
@@ -268,25 +268,25 @@ def unlock(update, context) -> str:
                     chat = dispatcher.bot.getChat(conn)
                     chat_id = conn
                     chat_name = chat.title
-                    text = "Unlocked {} for everyone in {}!".format(ltype, chat_name)
+                    text = "Membuka Kunci {} untuk semuanya dalam {}!".format(ltype, chat_name)
                 else:
                     if update.effective_message.chat.type == "private":
                         send_message(
                             update.effective_message,
-                            "This command is meant to use in group not in PM",
+                            "Perintah ini dimaksudkan untuk digunakan dalam grup bukan di PM",
                         )
                         return ""
                     chat = update.effective_chat
                     chat_id = update.effective_chat.id
                     chat_name = update.effective_message.chat.title
-                    text = "Unlocked {} for everyone!".format(ltype)
+                    text = "Membuka Kunci {} untuk semuanya!".format(ltype)
                 sql.update_lock(chat.id, ltype, locked=False)
                 send_message(update.effective_message, text, parse_mode="markdown")
                 return (
                     "<b>{}:</b>"
-                    "\n#UNLOCK"
+                    "\n#TERBUKA"
                     "\n<b>Admin:</b> {}"
-                    "\nUnlocked <code>{}</code>.".format(
+                    "\nTerbuka <code>{}</code>.".format(
                         html.escape(chat.title),
                         mention_html(user.id, user.first_name),
                         ltype,
@@ -300,24 +300,24 @@ def unlock(update, context) -> str:
                     chat = dispatcher.bot.getChat(conn)
                     chat_id = conn
                     chat_name = chat.title
-                    text = "Unlocked {} for everyone in {}!".format(ltype, chat_name)
+                    text = "Membuka Kunci {} untuk semuanya dalam {}!".format(ltype, chat_name)
                 else:
                     if update.effective_message.chat.type == "private":
                         send_message(
                             update.effective_message,
-                            "This command is meant to use in group not in PM",
+                            "Perintah ini dimaksudkan untuk digunakan dalam grup bukan di PM",
                         )
                         return ""
                     chat = update.effective_chat
                     chat_id = update.effective_chat.id
                     chat_name = update.effective_message.chat.title
-                    text = "Unlocked {} for everyone!".format(ltype)
+                    text = "Membuka kunci {} untuk semuanya!".format(ltype)
 
                 can_change_info = chat.get_member(context.bot.id).can_change_info
                 if not can_change_info:
                     send_message(
                         update.effective_message,
-                        "I don't have permission to change group info.",
+                        "Saya tidak memiliki izin untuk mengubah info grup.",
                         parse_mode="markdown",
                     )
                     return
@@ -335,9 +335,9 @@ def unlock(update, context) -> str:
 
                 return (
                     "<b>{}:</b>"
-                    "\n#UNLOCK"
+                    "\n#TERBUKA"
                     "\n<b>Admin:</b> {}"
-                    "\nUnlocked <code>{}</code>.".format(
+                    "\nTerbuka <code>{}</code>.".format(
                         html.escape(chat.title),
                         mention_html(user.id, user.first_name),
                         ltype,
@@ -346,11 +346,11 @@ def unlock(update, context) -> str:
             else:
                 send_message(
                     update.effective_message,
-                    "What are you trying to unlock...? Try /locktypes for the list of lockables.",
+                    "Apa yang kamu coba kunci...? Coba /locktypes untuk daftar yang dapat dikunci.",
                 )
 
         else:
-            send_message(update.effective_message, "What are you trying to unlock...?")
+            send_message(update.effective_message, "Apa yang kamu coba kunci...?")
 
     return ""
 
@@ -372,7 +372,7 @@ def del_lockables(update, context):
                         try:
                             message.delete()
                         except BadRequest as excp:
-                            if excp.message == "Message to delete not found":
+                            if excp.message == "Pesan Terhapus tidak ditemukan":
                                 pass
                             else:
                                 LOGGER.exception("ERROR in lockables")
@@ -383,7 +383,7 @@ def del_lockables(update, context):
                         try:
                             message.delete()
                         except BadRequest as excp:
-                            if excp.message == "Message to delete not found":
+                            if excp.message == "Pesan Terhapus tidak ditemukan":
                                 pass
                             else:
                                 LOGGER.exception("ERROR in lockables")
@@ -395,7 +395,7 @@ def del_lockables(update, context):
                     try:
                         message.delete()
                     except BadRequest as excp:
-                        if excp.message == "Message to delete not found":
+                        if excp.message == "Pesan Terhapus tidak ditemukan":
                             pass
                         else:
                             LOGGER.exception("ERROR in lockables")
@@ -407,7 +407,7 @@ def del_lockables(update, context):
                     try:
                         message.delete()
                     except BadRequest as excp:
-                        if excp.message == "Message to delete not found":
+                        if excp.message == "Pesan Terhapus tidak ditemukan":
                             pass
                         else:
                             LOGGER.exception("ERROR in lockables")
@@ -425,22 +425,22 @@ def del_lockables(update, context):
                         if not is_bot_admin(chat, context.bot.id):
                             send_message(
                                 update.effective_message,
-                                "I see a bot and I've been told to stop them from joining..."
-                                "but I'm not admin!",
+                                "Saya melihat bot dan saya telah diberitahu untuk menghentikan mereka bergabung..."
+                                "tapi saya bukan admin!",
                             )
                             return
 
                         chat.kick_member(new_mem.id)
                         send_message(
                             update.effective_message,
-                            "Only admins are allowed to add bots in this chat! Get outta here.",
+                            "Hanya admin yang diizinkan untuk menambahkan bot dalam obrolan ini! Keluar dari sini.",
                         )
                         break
             else:
                 try:
                     message.delete()
                 except BadRequest as excp:
-                    if excp.message == "Message to delete not found":
+                    if excp.message == "Pesan Terhapus tidak ditemukan":
                         pass
                     else:
                         LOGGER.exception("ERROR in lockables")
@@ -454,7 +454,7 @@ def build_lock_message(chat_id):
     locklist = []
     permslist = []
     if locks:
-        res += "*" + "These are the current locks in this Chat:" + "*"
+        res += "*" + "Ini adalah kunci saat ini di Obrolan ini:" + "*"
         if locks:
             locklist.append("sticker = `{}`".format(locks.sticker))
             locklist.append("audio = `{}`".format(locks.audio))
@@ -489,7 +489,7 @@ def build_lock_message(chat_id):
         # Building lock list string
         for x in locklist:
             res += "\n • {}".format(x)
-    res += "\n\n*" + "These are the current chat permissions:" + "*"
+    res += "\n\n*" + "Ini adalah izin obrolan saat ini:" + "*"
     for x in permslist:
         res += "\n • {}".format(x)
     return res
@@ -511,7 +511,7 @@ def list_locks(update, context):
         if update.effective_message.chat.type == "private":
             send_message(
                 update.effective_message,
-                "This command is meant to use in group not in PM",
+                "Perintah ini dimaksudkan untuk digunakan dalam grup bukan di PM",
             )
             return ""
         chat = update.effective_chat
@@ -519,7 +519,7 @@ def list_locks(update, context):
 
     res = build_lock_message(chat.id)
     if conn:
-        res = res.replace("Locks in", "*{}*".format(chat_name))
+        res = res.replace("Terkunci dalam", "*{}*".format(chat_name))
 
     send_message(update.effective_message, res, parse_mode=ParseMode.MARKDOWN)
 
@@ -562,30 +562,29 @@ def __chat_settings__(chat_id, user_id):
 
 
 __help__ = """
-Do stickers annoy you? or want to avoid people sharing links? or pictures? \
-You're in the right place!
-The locks module allows you to lock away some common items in the \
-telegram world; the bot will automatically delete them!
+Apakah stiker mengganggu Anda? atau ingin menghindari orang berbagi tautan? atau gambar? \
+Anda berada di tempat yang tepat!
+Modul kunci memungkinkan Anda untuk mengunci beberapa item umum di \
+dunia telegram; bot akan secara otomatis menghapusnya!
+❍ /locktypes*:* Mencantumkan semua kemungkinan locktypes
 
- ❍ /locktypes*:* Lists all possible locktypes
- 
-*Admins only:*
- ❍ /lock <type>*:* Lock items of a certain type (not available in private)
- ❍ /unlock <type>*:* Unlock items of a certain type (not available in private)
- ❍ /locks*:* The current list of locks in this chat.
- 
-Locks can be used to restrict a group's users.
-eg:
-Locking urls will auto-delete all messages with urls, locking stickers will restrict all \
-non-admin users from sending stickers, etc.
-Locking bots will stop non-admins from adding bots to the chat.
+*Hanya Admin :*
+❍ /lock <tipe>*:* Mengunci item dengan tipe tertentu (tidak tersedia secara pribadi)
+❍ /unlock <tipe>*:* Buka kunci item dari jenis tertentu (tidak tersedia secara pribadi)
+❍ /locks*:* Daftar kunci saat ini dalam obrolan ini.
 
-*Note:*
- • Unlocking permission *info* will allow members (non-admins) to change the group information, such as the description or the group name
- • Unlocking permission *pin* will allow members (non-admins) to pinned a message in a group
+Kunci dapat digunakan untuk membatasi pengguna grup.
+misalnya:
+Mengunci url akan otomatis menghapus semua pesan dengan url, mengunci stiker akan membatasi semua \
+pengguna non-admin dari mengirim stiker, dll.
+Mengunci bot akan menghentikan non-admin menambahkan bot ke obrolan.
+
+*Catatan:*
+ • Izin membuka *info* akan memungkinkan anggota (non-admin) untuk mengubah informasi grup, seperti deskripsi atau nama grup
+ • Membuka izin *pin* akan memungkinkan anggota (non-admin) untuk menyematkan pesan dalam grup
 """
 
-__mod_name__ = "Lᴏᴄᴋs"
+__mod_name__ = "Kunci 🔐"
 
 LOCKTYPES_HANDLER = DisableAbleCommandHandler("locktypes", locktypes)
 LOCK_HANDLER = CommandHandler("lock", lock, pass_args=True)  # , filters=Filters.group)
