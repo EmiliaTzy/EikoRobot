@@ -146,18 +146,18 @@ size=200x200&charset-source=UTF-8&charset-target=UTF-8\
     )
     os.remove(required_file_name)
     duration = (datetime.now() - start).seconds
-    await qrcode.reply("Created QRCode in {} seconds".format(duration))
+    await qrcode.reply("Membuat QRCode dalam {} detik".format(duration))
 
 file_help = os.path.basename(__file__)
 file_help = file_help.replace(".py", "")
 file_helpo = file_help.replace("_", " ")
 
 __help__ = """
- - /getqr: get the qr code content from the replied qr code
- - /makeqr <content>: make a qr code from the given message (text, link, etc...)
+ - /getqr: dapatkan konten kode qr dari kode qr yang dibalas
+ - /makeqr <Konten>: buat kode qr dari pesan yang diberikan (teks, link, dan sebagainya...)
 """
 
-__mod_name__ = "GᴇɴQʀ"
+__mod_name__ = "Kode QR 📟"
 
 GETQR_HANDLER = CommandHandler("getqr", parseqr)
 MAKEQR_HANDLER = CommandHandler("makeqr", makeqr)
