@@ -7,7 +7,7 @@ from pyrogram.types import (
     InputMediaAudio,
     Message,
 )
-from Tianabot import app
+from Tianabot import pbot
 from pyrogram import Client, filters
 from youtubesearchpython import VideosSearch
 import lyricsgenius
