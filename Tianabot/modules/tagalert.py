@@ -28,7 +28,7 @@ def get_info(id):
 
 @pbot.on_message(filters.command(["tagalert"]) & filters.private)
 async def locks_dfunc(_, message):
-   lol = await message.reply("Processing..")
+   lol = await message.reply("Memproses..")
    if len(message.command) != 2:
       return await lol.edit("Expected on or off 👀")
    parameter = message.text.strip().split(None, 1)[1].lower()
@@ -37,28 +37,28 @@ async def locks_dfunc(_, message):
      if not message.from_user:
        return
      if not message.from_user.username:
-       return await lol.edit("Only users with usernames are eligible for tag alert service")
+       return await lol.edit("Hanya pengguna dengan nama pengguna yang memenuhi syarat untuk layanan peringatan tag")
      uname=str(message.from_user.username)
      uname = uname.lower()
      isittrue = tagdb.find_one({f"teg": uname})
      if not isittrue:
           tagdb.insert_one({f"teg": uname})
-          return await lol.edit(f"Tag alerts enabled.\nWhen someone tags you as @{uname} you will be notified")
+          return await lol.edit(f"Tanda peringatan diaktifkan.\nKetika seseorang menandai Anda sebagai @{uname} anda akan diberi tahu")
      else:
-          return await lol.edit("Tag alerts already enabled for you")
+          return await lol.edit("Tanda peringatan sudah diaktifkan untuk Anda")
    if parameter == "off" or parameter=="OFF":
      if not message.from_user:
        return
      if not message.from_user.username:
-       return await lol.edit("Only users with usernames are eligible for tag alert service")
+       return await lol.edit("Hanya pengguna dengan nama pengguna yang memenuhi syarat untuk layanan peringatan tag")
      uname = message.from_user.username
      uname = uname.lower()
      isittrue = tagdb.find_one({f"teg": uname})
      if isittrue:
           tagdb.delete_one({f"teg": uname})
-          return await lol.edit("Tag alerts removed")
+          return await lol.edit("Tanda Peringatan Dihapus")
      else:
-          return await lol.edit("Tag alerts already disabled for you") 
+          return await lol.edit("Tanda peringatan sudah dinonaktifkan untuk Anda") 
    else:
      await lol.edit("Expected on or off 👀")
      
@@ -102,7 +102,7 @@ async def mentioned_alert(client, message):
               if present > ttime:
                try:
                  alarms.delete_one({"chat": chat, "user": user, "time": time, "zone": zone, "reason": reason})
-                 await client.send_message(chat, f"**🚨 REMINDER 🚨**\n\n__This is a reminder set by__ {user}\n__Reason__: {reason} \n\n`Reminded at: {ttime}`")
+                 await client.send_message(chat, f"**🚨 PENGINGAT 🚨**\n\n__Ini adalah pengingat yang disetel oleh__ {user}\n__Alasan__: {reason} \n\n`Reminded at: {ttime}`")
                  
                  message.continue_propagation()
                except:
@@ -181,7 +181,7 @@ async def mentioned_alert(client, message):
 
                      await client.send_message(
                           id,
-                          "**🌗 Night Mode Ended: `Chat Opening` \n\nEveryOne Should Be Able To Send Messages.**",
+                          "**🌗 Mode Malam Berakhir: `Pembukaan Obrolan` \n\nSemua Orang Harus Dapat Mengirim Pesan.**",
                      )
                      message.continue_propagation()
                      break
@@ -226,7 +226,7 @@ async def mentioned_alert(client, message):
                      await client.set_chat_permissions(id, ChatPermissions())                  
                      await client.send_message(
                          id,
-                         "**🌗Night Mode Starting: `Chat close initiated`\n\nOnly Admins Should Be Able To Send Messages**",
+                         "**🌗 Mode Malam Dimulai: `Chat close dimulai`\n\nHanya Admin yang Dapat Mengirim Pesan**",
                      )
                      message.continue_propagation()
                      break
@@ -250,8 +250,8 @@ async def mentioned_alert(client, message):
             return message.continue_propagation()
         user_ = message.from_user.mention or f"@{message.from_user.username}"
         
-        final_tagged_msg = f"**🔔 You Have Been** [Tagged]({tagged_msg_link}) **in** {chat_name} **By** {user_}"
-        button_s = InlineKeyboardMarkup([[InlineKeyboardButton("🔔 View Message 🔔", url=tagged_msg_link)]])
+        final_tagged_msg = f"**🔔 Anda telah** [Ditandai]({tagged_msg_link}) **dalam** {chat_name} **Oleh** {user_}"
+        button_s = InlineKeyboardMarkup([[InlineKeyboardButton("🔔 Lihat Pesan 🔔", url=tagged_msg_link)]])
         #print(final_tagged_msg)
         try:
             await client.send_message(chat_id=f"{text}", text=final_tagged_msg,reply_markup=button_s,disable_web_page_preview=True)
