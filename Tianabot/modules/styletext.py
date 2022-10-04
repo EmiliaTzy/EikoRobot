@@ -300,7 +300,7 @@ def weebify(update, context):
         string = "  ".join(args).lower()
 
     if not string:
-        message.reply_text("Usage is `/weebify <text>`", parse_mode=ParseMode.MARKDOWN)
+        message.reply_text("Gunakan `/weebify <teks>`", parse_mode=ParseMode.MARKDOWN)
         return
 
     for normiecharacter in string:
@@ -328,7 +328,7 @@ def bubble(update, context):
         string = "  ".join(args).lower()
 
     if not string:
-        message.reply_text("Usage is `/bubble <text>`", parse_mode=ParseMode.MARKDOWN)
+        message.reply_text("Gunakan `/bubble <teks>`", parse_mode=ParseMode.MARKDOWN)
         return
 
     for normiecharacter in string:
@@ -356,7 +356,7 @@ def fbubble(update, context):
         string = "  ".join(args).lower()
 
     if not string:
-        message.reply_text("Usage is `/fbubble <text>`", parse_mode=ParseMode.MARKDOWN)
+        message.reply_text("Gunakan `/fbubble <teks>`", parse_mode=ParseMode.MARKDOWN)
         return
 
     for normiecharacter in string:
@@ -384,7 +384,7 @@ def square(update, context):
         string = "  ".join(args).lower()
 
     if not string:
-        message.reply_text("Usage is `/square <text>`", parse_mode=ParseMode.MARKDOWN)
+        message.reply_text("Gunakan `/square <teks>`", parse_mode=ParseMode.MARKDOWN)
         return
 
     for normiecharacter in string:
@@ -412,7 +412,7 @@ def fsquare(update, context):
         string = "  ".join(args).lower()
 
     if not string:
-        message.reply_text("Usage is `/fsquare <text>`", parse_mode=ParseMode.MARKDOWN)
+        message.reply_text("Gunakan `/fsquare <teks>`", parse_mode=ParseMode.MARKDOWN)
         return
 
     for normiecharacter in string:
@@ -440,7 +440,7 @@ def blue(update, context):
         string = "  ".join(args).lower()
 
     if not string:
-        message.reply_text("Usage is `/blue <text>`", parse_mode=ParseMode.MARKDOWN)
+        message.reply_text("Gunakan `/blue <teks>`", parse_mode=ParseMode.MARKDOWN)
         return
 
     for normiecharacter in string:
@@ -467,7 +467,7 @@ def bi(update, context):
         string = "  ".join(args).lower()
 
     if not string:
-        message.reply_text("Usage is `/bi <text>`", parse_mode=ParseMode.MARKDOWN)
+        message.reply_text("Gunakan `/bi <teks>`", parse_mode=ParseMode.MARKDOWN)
         return
 
     for normiecharacter in string:
@@ -496,7 +496,7 @@ def latin(update, context):
         string = "  ".join(args).lower()
 
     if not string:
-        message.reply_text("Usage is `/latin <text>`", parse_mode=ParseMode.MARKDOWN)
+        message.reply_text("Gunakan `/latin <teks>`", parse_mode=ParseMode.MARKDOWN)
         return
 
     for normiecharacter in string:
@@ -524,7 +524,7 @@ def lined(update, context):
         string = "  ".join(args).lower()
 
     if not string:
-        message.reply_text("Usage is `/lined <text>`", parse_mode=ParseMode.MARKDOWN)
+        message.reply_text("Gunakan `/lined <teks>`", parse_mode=ParseMode.MARKDOWN)
         return
 
     for normiecharacter in string:
