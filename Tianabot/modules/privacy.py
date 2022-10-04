@@ -24,14 +24,14 @@ def privacy(update, context):
             PRIVACY_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                    InlineKeyboardButton(text="Privacy Policy", callback_data="policy_")
+                    InlineKeyboardButton(text="Privasi Polisi", callback_data="policy_")
                   ],
                  [
-                    InlineKeyboardButton(text="Retrieve data", callback_data="policy_data"),
-                    InlineKeyboardButton(text="Delete data", callback_data="policy_datadel")
+                    InlineKeyboardButton(text="Ambil Data", callback_data="policy_data"),
+                    InlineKeyboardButton(text="Hapus data", callback_data="policy_datadel")
                   ],
                  [
-                    InlineKeyboardButton(text="Cancel", callback_data="cancel_")
+                    InlineKeyboardButton(text="Batal", callback_data="cancel_")
                  ] 
                 ]
             ),
@@ -47,11 +47,11 @@ def privacy(update, context):
             )
 
             update.effective_message.reply_text(
-                "This command can only used in private!"
+                "Perintah ini hanya dapat digunakan secara pribadi!"
             )
         except Unauthorized:
             update.effective_message.reply_text(
-                "Contact me in pm for privacy information."
+                "Hubungi saya di pm untuk informasi privasi."
             )
 
 @run_async
@@ -59,27 +59,27 @@ def greyson_policy_callback(update, context):
     query = update.callback_query
     if query.data == "policy_":
         query.message.edit_text(
-            text=""" * Our contact details * \n*Name*: Tianabot \n*Telegram*: https://t.me/TianaxSupport
-\nThe bot has been made to *protect* and preserve *privacy* as best as possible. \nThe proper functioning of the bot is defined as the data required for all the commands in the /help to work as expected.
-\nOur privacy policy may change from time to time. If we make any material changes to our policies, we will place a prominent notice on https://t.me/TianaxSupport.""",
+            text=""" * Detail Kontak Kami * \n*Nama*: Eikobot \n*Telegram*: https://t.me/CatatanAzDay
+\nBot dibuat untuk *melindungi* dan menjaga *privasi* sebaik mungkin. \nFungsi bot yang benar didefinisikan sebagai data yang diperlukan untuk semua perintah di /help agar berfungsi seperti yang diharapkan.
+\nKebijakan privasi kami dapat berubah dari waktu ke waktu. Jika kami membuat perubahan material pada kebijakan kami, kami akan memberikan pemberitahuan yang jelas di https://t.me/CatatanAzDay.""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                    InlineKeyboardButton(text="What information we collect", callback_data="policy_wiwc")
+                    InlineKeyboardButton(text="Informasi apa yang kami kumpulkan", callback_data="policy_wiwc")
                   ],
                  [
-                    InlineKeyboardButton(text="Why we collect it", callback_data="policy_wwci")
+                    InlineKeyboardButton(text="Mengapa kami mengumpulkannya?", callback_data="policy_wwci")
                   ],
                  [
-                    InlineKeyboardButton(text="What we do", callback_data="policy_wwd")
+                    InlineKeyboardButton(text="Apa yang kita lakukan", callback_data="policy_wwd")
                   ],
                  [
-                    InlineKeyboardButton(text="What we DO NOT do", callback_data="policy_wwdnd")
+                    InlineKeyboardButton(text="Apa yang tidak kita lakukan", callback_data="policy_wwdnd")
                   ],
                  [
-                    InlineKeyboardButton(text="Rights to process", callback_data="policy_rtp")
+                    InlineKeyboardButton(text="Hak untuk memproses", callback_data="policy_rtp")
                  ] 
                 ]
             ),
@@ -239,44 +239,44 @@ def greyson_policy_callback(update, context):
                     InlineKeyboardButton(text="• Rights to process •", callback_data="policy_rtp")
                   ],
                  [
-                    InlineKeyboardButton(text="Back", callback_data="policy_")
+                    InlineKeyboardButton(text="Kembali", callback_data="policy_")
                  ] 
                 ]
             ),
         )
     elif query.data == "policy_datadel":
         query.message.edit_text(
-            text="""Are you sure you want to delete your data?
+            text="""Apakah Anda yakin ingin menghapus data Anda?
 
-Note that this will:
-- delete all notes/filters you have saved to your private chat.
-- delete your federation.
-- remove your admin status in other federations.
-- remove all your approvals from all chats.
+Perhatikan bahwa ini akan:
+- hapus semua catatan/filter yang telah Anda simpan ke obrolan pribadi Anda.
+- hapus federasi Anda.
+- hapus status admin Anda di federasi lain.
+- hapus semua persetujuan Anda dari semua obrolan.
 
-This action **CANNOT** be undone.""",
+Tindakan ini tidak bisa dibatalkan.""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                    InlineKeyboardButton(text="Yes, delete all my data.", callback_data="policy_del")
+                    InlineKeyboardButton(text="Ya, hapus semua data saya.", callback_data="policy_del")
                   ],
                  [
-                    InlineKeyboardButton(text="No, I changed my mind!", callback_data="cancel_")
+                    InlineKeyboardButton(text="Tidak, saya berubah pikiran!", callback_data="cancel_")
                   ]
                 ]
             ),
         )
     elif query.data == "policy_del": 
         query.message.edit_text(
-            text="""Your data has been deleted.""",
+            text="""Data anda telah terhapus.""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True
           )
     elif query.data == "policy_data": 
         query.message.edit_text(
-            text="""These feature coming soon.""",
+            text="""Fitur ini akan segera hadir.""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True
           )
@@ -287,18 +287,18 @@ def greyson_cancel_callback(update, context):
     query = update.callback_query
     if query.data == "cancel_": 
         query.message.edit_text(
-            text=""" Privacy deletion request cancelled.""",
+            text=""" Permintaan penghapusan privasi dibatalkan.""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True
           )
 
-__mod_name__ = "Pʀɪᴠᴀᴄʏ"
+__mod_name__ = "Privasi 👥"
 
 __help__ = """
-The privacy module allows you to see the bot privacy policy, as well as view and delete the data the bot stores about you.
+Modul privasi memungkinkan Anda melihat kebijakan privasi bot, serta melihat dan menghapus data yang disimpan bot tentang Anda.
 
-*The single command which can only be used in PM:*
-- /privacy: Provides all the tools relating to privacy, such as listing the privacy policy, retrieving, and deleting your data.
+*Satu perintah yang hanya dapat digunakan di PM:*
+- /privacy: Menyediakan semua alat yang berkaitan dengan privasi, seperti mencantumkan kebijakan privasi, mengambil, dan menghapus data Anda.
 """
 
 policy_callback_handler = CallbackQueryHandler(greyson_policy_callback, pattern=r"policy_")
