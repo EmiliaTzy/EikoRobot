@@ -43,7 +43,6 @@ RKICK_ERRORS = {
     "Pengguna adalah administrator obrolan",
     "Obrolan tidak ditemukan",
     "Tidak cukup hak untuk membatasi/membatalkan pembatasan anggota obrolan",
-
     "Pengguna_bukan_peserta",
     "Rekan_id_tidak valid",
     "Obrolan grup dinonaktifkan",
