@@ -88,10 +88,10 @@ async def rm_deletedacc(show):
             await telethn(EditBannedRequest(show.chat_id, user.id, UNBAN_RIGHTS))
             del_u += 1
     if del_u > 0:
-        del_status = f"**Membersihkan** `{del_u}` **Zombie**"
+        del_status = f"**Membersihkan** `{del_u}` **Akun**"
     if del_a > 0:
         del_status = (
-            f"**Cleaned** `{del_u}` **Zombie** "
+            f"**Terhapus** `{del_u}` **Akun** "
             f"\n`{del_a}` **Admin akun terhapus tidak dapat ditendang.**"
         )
     await memek.edit(del_status)
