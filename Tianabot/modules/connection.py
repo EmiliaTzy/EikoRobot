@@ -387,19 +387,19 @@ def connect_button(update, context):
         connect_chat(update, context)
 
 
-__mod_name__ = "Cᴏɴɴᴇᴄᴛ"
+__mod_name__ = "Koneksi 📡"
 
 __help__ = """
-Sometimes, you just want to add some notes and filters to a group chat, but you don't want everyone to see; This is where connections come in...
-This allows you to connect to a chat's database, and add things to it without the commands appearing in chat! For obvious reasons, you need to be an admin to add things; but any member in the group can view your data.
+Terkadang, Anda hanya ingin menambahkan beberapa catatan dan filter ke obrolan grup, tetapi Anda tidak ingin semua orang melihatnya; Di sinilah koneksi masuk ...
+Ini memungkinkan Anda untuk terhubung ke database obrolan, dan menambahkan sesuatu ke dalamnya tanpa perintah muncul di obrolan! Untuk alasan yang jelas, Anda harus menjadi admin untuk menambahkan sesuatu; tetapi setiap anggota dalam grup dapat melihat data Anda.‌‌
 
- ❍ /connect: Connects to chat (Can be done in a group by /connect or /connect <chat id> in PM)
- ❍ /connection: List connected chats
- ❍ /disconnect: Disconnect from a chat
- ❍ /helpconnect: List available commands that can be used remotely
-
-*Admin only:*
- ❍ /allowconnect <yes/no>: allow a user to connect to a chat
+ ❍ /connect: Hubungkan ke obrolan (Bisa dilakukan secara berkelompok /connect atau /connect <chat id> lewat PM)
+ ❍ /connection: List obrolan yang terhubung
+ ❍ /disconnect: Putuskan sambungan dari obrolan
+ ❍ /helpconnect: Buat daftar perintah yang tersedia yang dapat digunakan dari jarak jauh
+ 
+*Hanya Admin:*
+ ❍ /allowconnect <yes/no>: memungkinkan pengguna untuk terhubung ke obrolan
 """
 
 CONNECT_CHAT_HANDLER = CommandHandler("connect", connect_chat, pass_args=True)
